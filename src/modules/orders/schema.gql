@@ -1,0 +1,22 @@
+type Query {
+    orders (orderId: ID): [Order]!
+}
+
+type Mutation {
+    addOrder(userId: ID!, foodId: ID!, count: Int!): OrderResponse!
+    deleteOrder(userId: ID!): OrderResponse!
+}
+
+type Order {
+    orderId: ID
+    food: Food
+    user: User
+    count: Int
+}
+
+type OrderResponse {
+    status: Int!
+    message: String!
+    data: Order
+}
+
