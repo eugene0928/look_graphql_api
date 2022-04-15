@@ -4,6 +4,7 @@ import { schema } from './modules/index.js'
 
 const server = new ApolloServer( {
     context: ( {req, res} ) => model,
+    introspection: true,
     schema
 } )
 
